@@ -5,7 +5,7 @@
 # cleanup malicious codes from js files           #
 # url: https://github.com/fpshu/js-trojan-cleanup #
 # creator: TaPe (tape@fps.hu)                     #
-# company: fps webagency                          #
+# company: fps web agency                         #
 ###################################################
 
 # 1st command line argument: option
