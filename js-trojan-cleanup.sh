@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ###################################################
-# js-trojan-cleanup v0.1                          #
+# js-trojan-cleanup v0.2                          #
 # cleanup malicious codes from js files           #
 # url: https://github.com/fpshu/js-trojan-cleanup #
 # creator: TaPe (tape@fps.hu)                     #
@@ -20,6 +20,7 @@ args=$#
 # detect
 function detect
 {
+	cd $directory
 	echo "detect running"
 	find . -type f -name '*.js' -exec grep --color=auto -inHE '(\/\*([a-z0-9]{32})(.|[\r\n])*([a-z0-9]{32})\*\/)' {} +
 	echo "detect finished"
@@ -27,7 +28,9 @@ function detect
 
 # cleanup
 function cleanup
-{	echo "cleanup running"
+{
+	cd $directory
+	echo "cleanup running"
 	find . -type f -name '*.js' -exec sed -r -i 's/(\/\*([a-z0-9]{32})(.|[\r\n])*([a-z0-9]{32})\*\/)//g' {} +
 	echo "cleanup finished"
 }

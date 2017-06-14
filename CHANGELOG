@@ -1,3 +1,6 @@
+v0.2
+bugfix release
+-fix not handling directory
 v0.1
 first release
 -created pattern regexp
